@@ -1,5 +1,4 @@
-export const data_users = 
-[{
+{ "data_users" : [{
         "id": 1,
         "first_name": "Tansy",
         "last_name": "Licciardiello",
@@ -270,4 +269,5 @@ export const data_users =
         "balance": "£32.88",
         "open_issues": 37
 }]
+      }
 

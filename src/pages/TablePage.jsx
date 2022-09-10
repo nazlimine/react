@@ -1,16 +1,25 @@
 import React, { useState, useEffect }  from "react";
 import { Table } from 'rsuite';
-import { data_users } from '../data/data.jsx';
+import {getUsers} from '../store/actions/dataActions';
+import { useDispatch ,useSelector} from 'react-redux';
 
 
 const { Column, HeaderCell, Cell } = Table;
 
 export const TablePage = () => {
 
+  
+    const userData = useSelector(state => state.users);
+    const dispatch = useDispatch();
+    
+  
+    useEffect(() => {
+      dispatch(getUsers());
+      }, [])
+  
     return(
-
             <Table height={700}
-                data={data_users}>
+                data={userData.users.users.data_users}>
                 <Column width={200} sortable>
                 <HeaderCell>Id</HeaderCell>
                 <Cell dataKey="id" />
